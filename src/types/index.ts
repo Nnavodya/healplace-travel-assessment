@@ -13,7 +13,7 @@ export interface Destination {
   location: string;
   country: string;
   category: Exclude<DestinationCategory, 'All'>;
-  price: number; // in USD per person
+  price: number; // in LKR per person
   originalPrice?: number;
   duration: string; // e.g. "4 Days / 3 Nights"
   rating: number; // e.g. 4.92
@@ -30,6 +30,7 @@ export interface Destination {
 
 export interface Booking {
   id: string;
+  bookingReference: string;
   destinationId: string;
   destinationName: string;
   destinationImage: string;
@@ -37,8 +38,7 @@ export interface Booking {
   fullName: string;
   email: string;
   phone: string;
-  checkInDate: string;
-  checkOutDate: string;
+  travelDate: string;
   guests: number;
   specialRequests?: string;
   totalPrice: number;
@@ -59,8 +59,7 @@ export interface BookingFormData {
   fullName: string;
   email: string;
   phone: string;
-  checkInDate: string;
-  checkOutDate: string;
+  travelDate: string;
   guests: number;
   specialRequests?: string;
 }
@@ -69,8 +68,7 @@ export interface FormErrors {
   fullName?: string;
   email?: string;
   phone?: string;
-  checkInDate?: string;
-  checkOutDate?: string;
+  travelDate?: string;
   guests?: string;
   general?: string;
 }
