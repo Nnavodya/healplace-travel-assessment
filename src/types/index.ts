@@ -1,11 +1,9 @@
 export type DestinationCategory =
   | 'All'
-  | 'Beach'
-  | 'Mountain'
+  | 'Nature'
   | 'Cultural'
-  | 'Adventure'
-  | 'Wellness'
-  | 'Urban';
+  | 'Beach'
+  | 'Heritage';
 
 export interface Destination {
   id: string;
@@ -17,8 +15,8 @@ export interface Destination {
   category: Exclude<DestinationCategory, 'All'>;
   price: number; // in USD per person
   originalPrice?: number;
-  duration: string; // e.g. "6 Days / 5 Nights"
-  rating: number; // e.g. 4.9
+  duration: string; // e.g. "4 Days / 3 Nights"
+  rating: number; // e.g. 4.92
   reviewsCount: number;
   featured: boolean;
   popular: boolean;
@@ -76,4 +74,3 @@ export interface FormErrors {
   guests?: string;
   general?: string;
 }
-
